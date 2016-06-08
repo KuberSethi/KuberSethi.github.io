@@ -1,0 +1,656 @@
+
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  
+}
+
+body {
+  font-size: 1.6rem;
+  color: #E2E0E0;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Anonymous Pro', sans-serif;
+}
+
+a {
+  color: #8A8887;
+  text-decoration: none;
+  font-family: 'Anonymous Pro', sans-serif;
+}
+
+h1 {
+  color: #030303;
+  margin-bottom: 1em;
+  font-size: 2.2rem;
+  font-family: 'Anonymous Pro', sans-serif;
+}
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 4.4rem;
+    font-weight: 300;
+    font-family: 'Anonymous Pro', ;
+  }
+}
+
+
+
+
+
+/* -------------------------------- 
+
+Social Media Icons
+
+-------------------------------- */
+
+a {
+	color: #000;
+	text-decoration: none;
+	padding: 5px;
+	font-family: 'Anonymous Pro', sans-serif;
+}
+
+.socialbtnsbtnsbtns, .socialbtnsbtnsbtns ul, .socialbtnsbtnsbtns li {
+	margin: 0;
+	padding: 5px;
+}
+
+.socialbtnsbtnsbtns li {
+    list-style: none outside none;
+    display: inline-block;
+}
+
+.socialbtns li {
+    list-style: none outside none;
+    display: inline-block;
+}
+
+.socialbtns .fa {
+	color: #FFF;
+	text-shadow: 1px 1px 0px #000,
+			1px -1px 0px #000,
+			-1px 1px 0px #000,
+			-1px -1px 0px #000;
+	-webkit-text-shadow: 1px 1px 0px #000,
+			1px -1px 0px #000,
+			-1px 1px 0px #000,
+			-1px -1px 0px #000;
+	-moz-text-shadow: 1px 1px 0px #000,
+			1px -1px 0px #000,
+			-1px 1px 0px #000,
+			-1px -1px 0px #000;
+	-o-text-shadow: 1px 1px 0px #000,
+			1px -1px 0px #000,
+			-1px 1px 0px #000,
+			-1px -1px 0px #000;
+	transition: all ease-out 0.5s;
+	-moz-transition: all ease-out 0.5s;
+	-webkit-transition: all ease-out 0.5s;
+	-o-transition: all ease-out 0.5s;
+}
+
+.socialbtns .fa:hover {
+	color: #000;
+	text-shadow: 1px 1px 0px #fff,
+			1px -1px 0px #fff,
+			-1px 1px 0px #fff,
+			-1px -1px 0px #fff;
+	-webkit-text-shadow: 1px 1px 0px #fff,
+			1px -1px 0px #fff,
+			-1px 1px 0px #fff,
+			-1px -1px 0px #fff;
+	-moz-text-shadow: 1px 1px 0px #fff,
+			1px -1px 0px #fff,
+			-1px 1px 0px #fff,
+			-1px -1px 0px #fff;
+	-o-text-shadow: 1px 1px 0px #fff,
+			1px -1px 0px #fff,
+			-1px 1px 0px #fff,
+			-1px -1px 0px #fff;
+	transition: all ease 0.5s;
+	-moz-transition: all ease-in 0.5s;
+	-webkit-transition: all ease-in 0.5s;
+	-o-transition: all ease-in 0.5s;
+}
+
+/* -------------------------------- 
+
+Reusable Parts
+
+-------------------------------- */
+.cd-btn {
+  display: inline-block;
+  padding: 1.4em 1.6em;
+  margin-bottom: 2em;
+  border-radius: 50em;
+  background-color: #00000f;
+  color: #3C3A3E;
+  font-weight: bold;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+.no-touch .cd-btn:hover {
+  background-color: #A4A3A3;
+}
+.cd-about .cd-btn {
+  background-color: #fdf9f3;
+}
+.cd-portfolio .cd-btn {
+  background-color: #fdf9f3;
+}
+
+/* -------------------------------- 
+
+Main Components 
+
+-------------------------------- */
+body::after, body::before {
+  /* these are the 2 half blocks which cover the content once the animation is triggered */
+  content: '';
+  height: 50vh;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  background-color: #fdf9f3;
+  z-index: 1;
+  /* Force Hardware Acceleration */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition: -webkit-transform 0.4s 0.4s;
+  -moz-transition: -moz-transform 0.4s 0.4s;
+  transition: transform 0.4s 0.4s;
+}
+body::before {
+  top: 0;
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+body::after {
+  bottom: 0;
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+}
+body.page-is-changing::after, body.page-is-changing::before {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: -webkit-transform 0.4s 0s;
+  -moz-transition: -moz-transform 0.4s 0s;
+  transition: transform 0.4s 0s;
+}
+
+main {
+  height: 100vh;
+  padding: 10px;
+  text-align: center;
+  	font-family: 'Anonymous Pro', sans-serif;
+
+}
+main .cd-main-content {
+  position: relative;
+  height: calc(100vh - 20px);
+}
+main .cd-main-content > div {
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+main .cd-main-content::after, main .cd-main-content::before {
+  /* these are the 2 gradient overlay at the top and bottom of the .cd-main-content - to indicate that you can scroll */
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 50px;
+  width: 100%;
+}
+main .cd-main-content::before {
+  top: 0;
+}
+main .cd-main-content::after {
+  bottom: 0;
+}
+main .cd-main-content.cd-index {
+  /* .cd-main-content basic style - index page */
+  background-color: #fdf9f3;
+  /* vertically center its content */
+  display: table;
+  width: 100%;
+}
+main .cd-main-content.cd-index > div {
+  /* vertically center the content inside the .cd-index */
+  display: table-cell;
+  vertical-align: middle;
+}
+main .cd-main-content.cd-index::after {
+  background-color: rgba(64, 137, 166, 0);
+  background-image: -webkit-linear-gradient(bottom, #fdf9f3, rgba(64, 137, 166, 0));
+  background-image: linear-gradient(to top,#fdf9f3, rgba(64, 137, 166, 0));
+}
+main .cd-main-content.cd-index::before {
+  background-color: rgba(64, 137, 166, 0);
+  background-image: -webkit-linear-gradient(top, #fdf9f3, rgba(64, 137, 166, 0));
+  background-image: linear-gradient(to bottom,#fdf9f3, rgba(64, 137, 166, 0));
+}
+main .cd-main-content.cd-about {
+  /* .cd-main-content basic style - about page */
+  background-color: #3C3A3E;
+}
+main .cd-main-content.cd-portfolio {
+  /* .cd-main-content basic style - about page */
+  background-color: #3C3A3E;
+}
+main .cd-main-content.cd-about > div {
+  padding-top: 50px;
+}
+main .cd-main-content.cd-portfolio > div {
+  padding-top: 50px;
+}
+main .cd-main-content.cd-about::after {
+  background-color: rgba(40, 48, 64, 0);
+  background-image: -webkit-linear-gradient(bottom, #3C3A3E, rgba(40, 48, 64, 0));
+  background-image: linear-gradient(to top,#3C3A3E, rgba(40, 48, 64, 0));
+}
+main .cd-main-content.cd-portfolio::after {
+  background-color: rgba(40, 48, 64, 0);
+  background-image: -webkit-linear-gradient(bottom, #3C3A3E, rgba(40, 48, 64, 0));
+  background-image: linear-gradient(to top,#3C3A3E, rgba(40, 48, 64, 0));
+}
+main .cd-main-content.cd-about::before {
+  background-color: rgba(40, 48, 64, 0);
+  background-image: -webkit-linear-gradient(top, #3C3A3E, rgba(40, 48, 64, 0));
+  background-image: linear-gradient(to bottom,#3C3A3E, rgba(40, 48, 64, 0));
+}
+main .cd-main-content.cd-portfolio::before {
+  background-color: rgba(40, 48, 64, 0);
+  background-image: -webkit-linear-gradient(top, #3C3A3E, rgba(40, 48, 64, 0));
+  background-image: linear-gradient(to bottom,#3C3A3E, rgba(40, 48, 64, 0));
+}
+main p {
+  width: 90%;
+  max-width: 768px;
+  margin: 3em auto;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #fdf9f3;
+  text-align: left;
+  font-family: 'Anonymous Pro', sans-serif;
+
+}
+
+.header {
+  font-family: 'Anonymous Pro', sans-serif;
+  color: #ffffff;
+}
+
+.pic {
+  border-radius:50%;
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+  }
+  main .cd-main-content {
+    height: calc(100vh - 40px);
+  }
+  main.cd-index > div {
+    padding-top: 200px;
+  }
+  main.cd-index > div {
+    padding-top: 50px;
+  }
+  main p {
+    font-size: 2rem;
+  	font-family: 'Anonymous Pro', sans-serif;
+
+  }
+}
+body {
+  background: #fdf9f3;
+  font-family: 'Anonymous Pro', sans-serif;
+
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 900px;
+  height: 400px;
+  	font-family: 'Anonymous Pro', sans-serif;
+
+}
+
+.main_box {
+  width: 250px;
+  height: 300px;
+  margin-left: 25px;
+  margin-bottom: 25px;
+  float: left;
+  position: relative;
+  border: 1px solid #b3b3b3;
+  background: #333333;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 0px #525252;
+  transition: all 200ms;
+}
+.main_box:before, .main_box:after {
+  content: ' ';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 20%;
+  border-left: 1px solid #b3b3b3;
+  width: 1px;
+  transition: all 500ms;
+  opacity: 0;
+}
+.main_box:after {
+  right: 15px;
+  left: auto;
+}
+.main_box:hover {
+  box-shadow: 18px 17px 10px -10px #000;
+}
+.main_box:hover:after, .main_box:hover:before {
+  height: 83%;
+  opacity: 1;
+}
+.main_box .sub_box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.main_box .sub_box:before, .main_box .sub_box:after {
+  content: ' ';
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 1px;
+  border-top: 1px solid #b3b3b3;
+  width: 20%;
+  transition: all 500ms;
+  opacity: 0;
+}
+.main_box .sub_box:after {
+  bottom: 15px;
+  top: auto;
+}
+.main_box .sub_box:hover:after, .main_box .sub_box:hover:before {
+  width: 83%;
+  opacity: 1;
+}
+.main_box .sub_box table {
+  height: 100%;
+  width: 100%;
+}
+.main_box .sub_box p {
+  color: #ffffff;
+  text-align: center;
+	font-family: 'Anonymous Pro', sans-serif;
+  font-size: 30px;
+  transition: all 1s;
+  margin-bottom: 15px;
+}
+.main_box .sub_box p.subtitle {
+  font-size: 12px;
+  line-height: 13px;
+}
+
+#text-right {
+  text-align: right;
+  font-size: 14pt;
+  height: auto;
+}
+#mainwrapper {
+	font-family: 'Anonymous Pro', sans-serif;
+	font-size: 10pt;
+	height: auto;
+	text-align: center;
+	width: 660px;
+}
+
+/* Image Box Style */
+#mainwrapper .box {
+	border: 5px solid #fff;
+	cursor: pointer;
+	height: 300px;
+	float: left;
+	margin: 5px;
+	position: relative;
+	overflow: hidden;
+	width: 600px;
+		-webkit-box-shadow: 1px 1px 1px 1px #ccc;
+		-moz-box-shadow: 1px 1px 1px 1px #ccc;
+		box-shadow: 1px 1px 1px 1px #ccc;
+}
+#mainwrapper .box img {
+	position: absolute;
+	left: 0;
+		-webkit-transition: all 300ms ease-out;
+		-moz-transition: all 300ms ease-out;
+		-o-transition: all 300ms ease-out;
+		-ms-transition: all 300ms ease-out;	
+	transition: all 300ms ease-out;
+}
+
+/* Caption Common Style */
+#mainwrapper .box .caption {
+	background-color: rgba(0,0,0,0.8);
+	position: absolute;
+	color: #fff;
+	z-index: 100;
+		-webkit-transition: all 300ms ease-out;
+		-moz-transition: all 300ms ease-out;
+		-o-transition: all 300ms ease-out;
+		-ms-transition: all 300ms ease-out;	
+		transition: all 300ms ease-out;
+	left: 0;
+}
+
+/** Caption 3: Fade **/
+#mainwrapper .box .fade-caption, #mainwrapper .box .scale-caption  {
+	opacity: 0;
+	width: 600px;
+	height: 300px;
+	text-align: left;
+	padding: 15px;
+}
+/** Full Caption :hover Behaviour **/
+#mainwrapper .box:hover .full-caption {
+	-moz-transform: translateY(100%);
+	-o-transform: translateY(100%);
+	-webkit-transform: translateY(100%);
+	opacity: 1;
+	transform: translateY(100%);
+}
+
+/** Fade Caption :hover Behaviour **/
+#mainwrapper .box:hover .fade-caption, #mainwrapper .box:hover .scale-caption  {
+	opacity: 1;
+}
+
+/** Scale Caption :hover Behaviour **/
+#mainwrapper .box:hover #image-6 {
+	-moz-transform: scale(1.4);
+	-o-transform: scale(1.4);
+	-webkit-transform: scale(1.4);
+	transform: scale(1.4);
+}
+
+#mainwrapper .box:hover .scale-caption h3, #mainwrapper .box:hover .scale-caption p {
+	-moz-transform: translateX(200px);
+	-o-transform: translateX(200px);
+	-webkit-transform: translateX(200px);
+	transform: translateX(200px);
+}
+
+
+.cd-cover-layer {
+  /* layer that covers the content when the animation is triggered */
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  height: calc(100% - 20px);
+  width: calc(100% - 20px);
+  opacity: 0;
+  visibility: hidden;
+  background-color: #fdf9f3;
+  -webkit-transition: opacity 0.4s 0.4s, visibility 0s 0.8s;
+  -moz-transition: opacity 0.4s 0.4s, visibility 0s 0.8s;
+  transition: opacity 0.4s 0.4s, visibility 0s 0.8s;
+}
+.cd-about .cd-cover-layer {
+  background-color: #3C3A3E;
+}
+.cd-portfolio .cd-cover-layer {
+  background-color: #3C3A3E;
+}
+.page-is-changing .cd-cover-layer {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
+  -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
+  transition: opacity 0.3s 0s, visibility 0s 0s;
+}
+@media only screen and (min-width: 768px) {
+  .cd-cover-layer {
+    height: calc(100% - 40px);
+    width: calc(100% - 40px);
+  }
+}
+
+.cd-loading-bar {
+  /* this is the loding bar - visible while switching from one page to the following one */
+  position: fixed;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  height: 2px;
+  width: 90%;
+  background-color: #E2E0E0;
+  visibility: hidden;
+  -webkit-transition: visibility 0s 0.4s, -webkit-transform 0.4s 0s ease-in;
+  -moz-transition: visibility 0s 0.4s, -moz-transform 0.4s 0s ease-in;
+  transition: visibility 0s 0.4s, transform 0.4s 0s ease-in;
+  /* Force Hardware Acceleration */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+.cd-about .cd-loading-bar {
+  background-color: #3C3A3E;
+}
+.cd-about .cd-loading-bar::before {
+  background-color: #E2E0E0;
+}
+.cd-portfolio .cd-loading-bar {
+  background-color: #3C3A3E;
+}
+.cd-portfolio .cd-loading-bar::before {
+  background-color: #E2E0E0;
+}
+.cd-loading-bar::before {
+  /* this is the progress bar inside the loading bar */
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #3C3A3E;
+  /* Force Hardware Acceleration */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transform: scaleX(0);
+  -moz-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  -o-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -ms-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+.page-is-changing .cd-loading-bar {
+  visibility: visible;
+  -webkit-transform: translateX(-50%) translateY(-50%) scaleX(0.3);
+  -moz-transform: translateX(-50%) translateY(-50%) scaleX(0.3);
+  -ms-transform: translateX(-50%) translateY(-50%) scaleX(0.3);
+  -o-transform: translateX(-50%) translateY(-50%) scaleX(0.3);
+  transform: translateX(-50%) translateY(-50%) scaleX(0.3);
+  -webkit-transition: visibility 0s 0.3s, -webkit-transform 0.4s 0.4s;
+  -moz-transition: visibility 0s 0.3s, -moz-transform 0.4s 0.4s;
+  transition: visibility 0s 0.3s, transform 0.4s 0.4s;
+}
+.page-is-changing .cd-loading-bar::before {
+  -webkit-transform: scaleX(1);
+  -moz-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  -o-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transition: -webkit-transform 0.8s 0.8s ease-in;
+  -moz-transition: -moz-transform 0.8s 0.8s ease-in;
+  transition: transform 0.8s 0.8s ease-in;
+}
+@media only screen and (min-width: 768px) {
+  .cd-loading-bar {
+    width: calc(100% - 40px);
+  }
+}
+
