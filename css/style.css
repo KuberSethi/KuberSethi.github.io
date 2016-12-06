@@ -335,6 +335,12 @@ body {
 
 }
 
+.projects { 
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'Anonymous Pro', sans-serif;
+}
+
 .container {
   position: absolute;
   top: 0;
